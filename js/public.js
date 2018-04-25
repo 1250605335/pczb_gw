@@ -1,0 +1,299 @@
+$(function(){
+	//点击注册
+	$(".signIn-img").click(function(){
+		$('.login-box').show();
+		$('.login-box-frame').show();
+		emptyInp()
+	})
+	$(".signIn-login-btn").click(function(){
+		$('.login-box').show();
+		$('.login-box-frame').show();
+		emptyInp()
+	})
+	$(".login-box-close").click(function(){
+		$(this).parent().hide();
+		$(this).parent().siblings(".login-box").hide();
+		emptyInp()
+	})
+	$(".signIn-reg-btn").click(function(){
+		$(".reg_bg").show();		
+		$('.login-box').show();
+	})
+	$(".show-login").click(function(){
+		$(".reg_bg").hide();
+		$(".login-box-frame").show();
+		emptyInp()
+	})
+	$(".immediately-register").click(function(){
+		$(".reg_bg").show();
+		$(".login-box-frame").hide();
+		emptyInp()
+	})
+	//清空input的值
+	function emptyInp(){
+		$("input").val('');
+	}
+	
+	//电话验证正则
+	var phoneRegex = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$";
+	//密码正则只能输入数字和字母
+	var passRegex = /^[a-zA-Z0-9]{6,12}$/;
+	var passNumber;
+	$(".phone-number").blur(function(){
+		if(!$(this).val().match(phoneRegex)){
+			$(".login-box-error").show();
+			$(".login-box-error>span").html("请输入正确的手机号");
+		}else{
+			$(".login-box-error").hide();
+		}
+	})
+	
+	$(".pass-number").blur(function(){
+		passNumber = $(this).val();
+		if(!$(this).val().match(passRegex)){
+			$(".login-box-error").show();
+			$(".login-box-error>span").html("请输入6-12数字或字母");
+		}else{
+			$(".login-box-error").hide();
+		}
+	})
+	$(".pass-number2").blur(function(){
+		if($(this).val() != passNumber){
+			$(".login-box-error").show();
+			$(".login-box-error>span").html("两次输入密码不一致");
+		}else{
+			$(".login-box-error").hide();
+		}
+	})
+	var chatJson = [
+		{name:"呢喃家暖暖",chat:"：借钱抽奖去"},
+		{name:"燕汐家不在心碎",chat:"：封号那次抽奖都说借钱"},
+		{name:"温柔的逍遥",chat:"：平台更新感觉和主播离得更近了"},
+		{name:"呢喃家皓皓",chat:"：抽流星雨"},
+		{name:"皇室贵族大大",chat:"：美女，是哪里的啊"},
+		{name:"爱情是伤感的",chat:"：不行"},
+		{name:"星宇老顽童",chat:"：我蹲墙角不说话"},
+		{name:"兔家咸鱼干",chat:"：老大，我不理了呀"},
+		{name:"爱恋",chat:"：改邪归正了"},
+		{name:"暮色暮光",chat:"：五天的停车费现在老贵了！晚上更贵，停不起！"},
+		{name:"游客66002",chat:"：没人抽奖"},
+		{name:"游客66002",chat:"：仙女棒，多少钱？"},
+		{name:"温柔的逍遥",chat:"：亏了三块"},
+		{name:"杰叔",chat:"：逍遥，鱼干好"},
+		{name:"白开水",chat:"：送的没特效"},
+		{name:"懒猪",chat:"：大家好"},
+		{name:"兔家军帅帅小闪耀",chat:"：不要退了都不行"},
+		{name:"亲亲亲亲亲",chat:"：100用三年"},
+		{name:"兔家咸鱼干",chat:"：水妹妹，我在的"},
+		{name:"懒猪",chat:"：来拼一桌，多个菜"},
+		{name:"浪哥",chat:"：哎哟"},
+		{name:"四海八荒抱走龙玥",chat:"：水哥"},
+		{name:"放荡天天闭关渡劫",chat:"：充8000会送一周啊，你们不知道吗"},
+		{name:"仪宝宝14号",chat:"：天总显示周"},
+		{name:"汐儿爱上无用不公",chat:"：天总神骑也快没了吧"},
+		{name:"下辈子也要找到你",chat:"：心碎中午好"},
+		{name:"不在心碎",chat:"：天总走了"},
+		{name:"温柔的逍遥",chat:"：船也不晕"},
+		{name:"敏家护卫队陪床伴",chat:"：套路太深，俺要回农村"},
+		{name:"不在心碎",chat:"：我们不套路任何人也不勉强任何人的"},
+		{name:"给予她幸福",chat:"：心碎好"},
+		{name:"下辈子也要找到你",chat:":再看会你"},
+		{name:"兔子冬儿",chat:"：下午休息"},
+		{name:"兔子冬儿",chat:"：心碎悄悄和有酒在吗"},
+		{name:"燕汐家的不在心碎",chat:"：估计在挂机吧"},
+		{name:"温柔的过客",chat:"：什么鬼，什么活动啊？"},
+		{name:"一生相爱",chat:"：哥哥还没吃饭吧"},
+		{name:"人生",chat:"：哥哥还没吃饭吧"},
+		{name:"有酒",chat:"：烟哥好"},
+		{name:"帝皇的孤独谁能懂",chat:"：买的"},
+		{name:"温柔的逍遥",chat:"：我对五菱车没好感"},
+		{name:"有酒",chat:"：买个奔驰开下"},
+		{name:"帝皇的孤独谁能懂",chat:"：有事出去一下"},
+		{name:"苹果的浪哥",chat:"：排名我已经超了人生了"},
+		{name:"人生",chat:"：我腿走路不舒服就休息了"},
+		{name:"A47",chat:"：好了，我下了，回家睡觉，晚上还得去捡瓶子"},
+		{name:"兔家军明月",chat:"：祝你走的很远，火起来！"},
+		{name:"大王的东东哥",chat:"：给我桃子，我给你桃林"},
+		{name:"亲亲我宝贝儿",chat:"：你好好看啊"},
+		{name:"星星眨眼睛",chat:"：还在啊大王"},
+		{name:"四海八荒抱走龙玥",chat:"：感觉钱不够花的"},
+		{name:"他是我老公",chat:"：呜呜呜"},
+		{name:"黄室七妹他三个",chat:"再来一个"},
+		{name:"温柔的小耗子",chat:":猫爬出来了"},
+		{name:"勿忘初心为梦启航",chat:"：我觉得你是挺好的一个人"},
+		{name:"温柔的逍遥",chat:"：要抽到归自己就好了"},
+		{name:"苹果的浪哥",chat:"：你卡了，你退一下"},
+		{name:"苹果的人生",chat:"：没卡啊"},
+		{name:"小女孩",chat:"：玥玥！"},
+		{name:"四海八荒抱走龙玥",chat:"：点首弱点"},
+		{name:"游客02475540",chat:"：好，关注，上班呢"},
+		{name:"念念的无天",chat:"：无聊啊"},
+		{name:"小阿念的花裤衩",chat:"：跟着你嗨就行了"},
+		{name:"东华少阳君",chat:"：我进场都没有专属歌曲吗"},
+		{name:"兔家咸鱼干",chat:"：我没有"},
+		{name:"追忆恋上菜",chat:"：现在没有钱说什么也没用"},
+		{name:"帝皇的孤独谁能懂",chat:"：我也要走了"},
+		{name:"颜华如梦",chat:"：还好啦"},
+		{name:"别闹",chat:"：棒球服都穿上了"},
+		{name:"守护秘宝宝的眼",chat:"：谁买车我再给520炮竹"},
+		{name:"秘宝宝也有泪",chat:"：我买了你真放吗"},
+		{name:"春天里的三三羊",chat:":666666"},
+		{name:"飞梦",chat:"：吃饭？"},
+		{name:"风尘",chat:"打苦工流浪"},
+		{name:"明月",chat:"：我补下小刀凑乎"},
+		{name:"游客02433329",chat:"：小妹妹一笑好销魂"},
+		{name:"回忆友谊里的折磨",chat:"：晚上好美女醉问相思：有酒在不？警察叔叔"},
+		{name:"骚情",chat:"：相思谁"},
+		{name:"帅帅小闪耀",chat:"：点错了"},
+		{name:"清明冷月夜",chat:"：这边的钱砸在那，钻石级也五个了！"},
+		{name:"燃烧的火花",chat:"：我要中间价"},
+		{name:"守护秘宝宝眼",chat:"：火花兄挖坑跳了吧"},
+		{name:"想喝奶请找秘宝宝",chat:"：哈哈哈，帮我弄个魔法？"},
+		{name:"燃烧的火花",chat:"：我喜欢你给你了，我心里不好过啊"},
+		{name:"兔家军夏天",chat:"：你说谁？我不知道你说啥"},
+		{name:"温柔的如风",chat:"：那还是我刚玩这个平台的时候的名字"},
+		{name:"游客平凡的心",chat:"：这样行吗"},
+		{name:"青春久不打烊",chat:"：估计是"},
+		{name:"辉哥的琳达",chat:"：节日快乐"},
+		{name:"仪宝家酒鬼",chat:"：风哥88"},
+		{name:"东华少阳君",chat:"：这个稍微好一点"},
+		{name:"空空非空空",chat:"：美女哪里人"},
+		{name:"东华少阳君",chat:"：那是骑士才能送的"},
+		{name:"空空非空空",chat:"：美女播多久了"},
+		{name:"温柔的无敌",chat:"：我说出牌"},
+		{name:"温柔的无敌",chat:"：你不想赢"},
+		{name:"好人",chat:"：宝宝又美了"},
+		{name:"仪宝家族勇少",chat:"：我先下了"},
+		{name:"那时雨",chat:"：老丈人送的"},
+		{name:"仪宝家族勇少",chat:"：我先下了"},
+		{name:"颜华如梦",chat:"：小白兔牙真好看"},
+		{name:"梦中情人仪宝",chat:"：哎哟我去，雨哥，你去面壁吧"},
+		{name:"阿里耶耶",chat:"：先加！情到深处自然发"},
+		{name:"阿里耶耶",chat:"：就知道跑车"},
+		{name:"阿里耶耶",chat:"：不用你说"},
+		{name:"白开水",chat:"：呀，眼，这么早"},
+		{name:"白开水",chat:"：心碎哥每天辣么早"},
+		{name:"不在心碎",chat:"：我们吃串串比火锅贵"},
+		{name:"浪哥",chat:"：我听说女孩锁骨那能养鱼，是吗"},
+		{name:"浪哥",chat:"：人生哥是闷骚型的"},
+		{name:"四海八荒抱走龙玥",chat:":锁骨养鱼的这件事都是好几年前的了你现在才知道"},
+		{name:"浪哥",chat:"：我只知道看屁股就能猜出生男生女"},
+		{name:"今夜想你",chat:"：看来你得生个双胞胎"},
+		{name:"浪哥",chat:"：美瞳是深紫色的吗"},
+		{name:"司徒幻想",chat:"：我想上天，天不收小雨"},
+		{name:"老乞丐",chat:"：虹美女，水总上午好"},
+		{name:"不在心碎",chat:"：清明节都放假吧？"},
+		{name:"0200515",chat:"：你这个情商都没有吗"},
+		{name:"小二夏",chat:"：浪哥果然名不虚传啊"},
+		{name:"浪哥",chat:"：我的骚是骨子里自带的，改不了"},
+		{name:"潇洒小哥",chat:":看一眼就得工作了，想你呀美女"},
+		{name:" 不在心碎",chat:"：我这今天六级风"},
+		{name:"温柔的过客",chat:"：花姑娘滴，呦西"},
+		{name:"浪哥",chat:"：你家巧克力搞活动啊"},
+		{name:"217990",chat:"：哈哈我滴猪猪穗"},
+		{name:"星宇老顽童",chat:"：礼物不在多，开心就好"},
+		{name:"我是你的蓝胖子",chat:"：你没事晃悠晃悠，你是不是在扮演乌龟？"},
+		{name:"空空落落",chat:"：接个电话我"},
+		{name:"我是你的蓝胖子",chat:"：丑比都不说自己丑"},
+		{name:"我是你的蓝胖子",chat:"：贾玲都说自己是女神"},
+		{name:"小二夏",chat:"：不是，我现在在老家"},
+		{name:"小二夏",chat:"：养过几次都没养好所以老爸就不让了"},
+		{name:"东华少阳君",chat:"：这个稍微好一点"},
+		{name:"空空非空空",chat:"美女哪里人"},
+		{name:"空空非空空",chat:"：美女哪里人"},
+		{name:"东华少阳君",chat:"：那是骑士才能送的"},
+		{name:"空空非空空",chat:"：美女播多久了"},
+		{name:"温柔的无敌",chat:"：我说出牌"},
+		{name:"温柔的无敌",chat:"：你不想赢"},
+		{name:"温柔的无敌",chat:"：斗地主也是一种纸牌玩法"},
+		{name:"东华少阳君",chat:"：送你250下"},
+		{name:"东华少阳君",chat:"：二月就是有点二的意思吗"},
+		{name:"秘宝宝懒猪",chat:"40.：少阳君刚才也这样说的"},
+		{name:"小柔情",chat:"：懒猪这是包场了？"},
+		{name:"秘宝宝懒猪",chat:"：没那本事，也就装逼下"},
+		{name:"小柔情",chat:"43.:我不说了... 怕你们了！"},
+		{name:"小柔情",chat:"：你们都是败家子"},
+		{name:"兔家军9044",chat:"：守候是土豪，我不是"},
+		{name:"兔家军9044",chat:"：兄弟你好"},
+		{name:"小二夏",chat:"：你死一边去，还小侄子，叫你留个联系方式都不敢"},
+		{name:"不必讨好",chat:"：我也是很尴尬"},
+		{name:"不必讨好",chat:"：后期就会好了"},
+		{name:"白开水",chat:"：十张"},
+		{name:"四大名捕·疯狂",chat:"：开水兄弟够狠"},
+		{name:"头像即是我",chat:"：没有人送你"},
+		{name:"游客02462024",chat:"：山人好"},
+		{name:"黄室七妹他三哥",chat:"：双播"},
+		{name:"看着我的眼睛",chat:"：对面多少了？"},
+		{name:"阿里耶耶",chat:"：你的我喜欢！生是你的人！死是你的鬼！"},
+		{name:"四海八荒抱走龙玥",chat:"：傻白甜"},
+		{name:"安妮 天使",chat:"：喜欢你的人就支持"},
+		{name:"小阿念的五百年",chat:"：扣扣糖"},
+		{name:"人生",chat:"：在睡觉"},
+		{name:" 小富贵",chat:"：你居然忘了我"},
+		{name:"魔鬼与天使",chat:"：今天身体不舒服，不在状态，就不要播太久了"},
+		{name:"空空非空空",chat:"：台州哥哥去看果儿了吗"},
+		{name:"默默家六哥",chat:"：那就是比光头强帅了"},
+		{name:"游客02441501",chat:"：你俩都是零吗，是不是送一个棒棒糖你就赢了"},
+		{name:"梦里毁他千百遍",chat:"：没事小十块"},
+		{name:"星宇尊者",chat:"：第一千万次关注"},
+		{name:"M10017764124",chat:"：这是搞乃样？"},
+		{name:"梦里毁他千百遍",chat:":侧方位停车"},
+		{name:"鬼龙",chat:"：今天怎么穿的那么性感"},
+		{name:"娜一抹风情",chat:"：心碎好"},
+		{name:"安妮 天使",chat:"：不敢看了，被你迷住了"},
+		{name:"安妮 天使",chat:"：我不能对不起我家小主"},
+		{name:"鬼龙",chat:"：今天怎么没人聊天啊"},
+		{name:"菟菟",chat:"：看到我分享的歌没"},
+		{name:"白开水",chat:"：好拉，我滚了"},
+		{name:"子墨",chat:"：美女好，浮云哥好"},
+		{name:"司徒浮云",chat:"：子墨好"},
+		{name:"子墨",chat:"：加油"},
+		{name:"醉问相思",chat:"：有酒在不？警察叔叔"},
+		{name:"骚情",chat:"：相思谁"},
+		{name:"兔家军帅帅小闪耀",chat:"：点错了"},
+		{name:"清明冷月夜",chat:"：这边的钱砸在那，钻石级也五个了！"},
+		{name:"燃烧的火花",chat:"：我要中间价"},
+		{name:"守护秘宝宝眼",chat:"：火花兄挖坑跳了吧"},
+		{name:"想喝奶请找秘宝宝",chat:"：哈哈哈，帮我弄个魔法？"},
+		{name:"燃烧的火花",chat:"：我喜欢你给你了，我心里不好过啊"},
+		{name:"兔家军夏天",chat:"：你说谁？我不知道你说啥"},
+		{name:"温柔的如风",chat:"：那还是我刚玩这个平台的时候的名字"},
+		{name:"骚情",chat:""},
+		{name:"超人不会肥",chat:"：如风哥在换。头像没换，全站52，改不了"},
+		{name:"司徒家不放弃",chat:"：不喜欢你唱歌"},
+		{name:"杰叔",chat:"：充电了"},
+		{name:"游客平凡的心",chat:"：这样行吗"},
+		{name:"青春久不打烊",chat:"：估计是"},
+		{name:"辉哥的琳达",chat:"：节日快乐"},
+		{name:"仪宝家酒鬼",chat:"：风哥88"},
+		{name:"醉问相思",chat:"：宝宝，你又来这个萌萌哒的表情了"},
+		{name:"秘宝宝的小战士",chat:"：东风破"},
+		{name:"顺风耳",chat:"：已经关注"},
+		{name:"游客秋",chat:"：买的吗？"}
+	]
+	//随机数
+	function selectfrom (lowValue,highValue){
+		var choice=highValue-lowValue+1;
+		return Math.ceil(Math.random()*choice+lowValue);
+	}
+	//添加LI
+	var chatHtml = '';
+	for(var i=0;i<100;i++){
+		var index = selectfrom(1,200);
+		chatHtml +="<li class='chat-list'>"
+			+"<span>"+chatJson[index].name+"</span> "
+			+"<span>"+chatJson[index].chat+"</span>"
+			+"</li>"
+	}
+	$(".chat-box>ul").html(chatHtml)
+	//滚动
+	var tp = 0;
+	var s = 1;
+	var timer = setInterval(function(){
+		tp -= s
+		if(tp<-4200){
+			tp = 260
+		}
+		$(".chat-box>ul").css({top:tp+"px"})
+	},50)
+})

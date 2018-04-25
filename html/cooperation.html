@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="直播 美女直播 长腿 性感 知性 免费 户外 AR AI VR 萝莉 御姐 黑丝 萌 绝地求生 王者 狼人杀 喊麦 尬舞 嘻哈"/>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>商务合作</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/cooperation.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/layout.css"/>
+		
+	</head>
+	<body>
+		<div class="wrapper">
+			<img class="bg1" src="../img/bg1.png"/>
+			<img class="bg2" src="../img/bg2.png"/>
+			<div class="section">
+				<div class="content">
+					<div class="top">
+						<a href="../index.html"><img class="logo" src="../img/2018-3-2/xingyu-logo-orange.png"/></a>
+						<ul class="top-nav">
+							<li><a href="../index.html">首页</a></li>
+							<li><a href="./brilliantvideo.html">精彩视频</a></li>
+							<!--<li><a href="./phoneGame.html">游戏</a></li>-->
+							<li><a href="./about.html">关于我们</a></li>
+							<li class="active"><a href="cooperation.html">商务合作</a></li>
+						</ul>
+						<div>
+							<button class="signIn-reg-btn">注册</button><button class="signIn-login-btn">登录</button><button class="signIn-out-btn" style="display: none;">退出</button>
+							<span class="login-userName">用户昵称：<span class="login-phone">阿斯顿发送到发的</span></span>
+						</div>
+					</div>
+					<div class="middle">
+						<div class="cooperation">
+							<h2>商务合作</h2>
+							<div class="connect-details">
+								<p>联系人：陈先生</p>
+								<p>QQ：2074698045</p>
+								<p>联系邮箱：2074698045@qq.com</p>
+								
+							</div>
+							<div class="connect">
+								<p>联系人：名宇</p>
+								<p>联系电话：13466647234</p>
+								<p>QQ:1774573741</p>
+								<p>联系邮箱：1774573741@qq.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="bottom">
+						<h2>合作伙伴</h2>
+						<div class="patner">
+							<a href="http://www.qq.com/"><img class="mar-r" src="../img/tengxun.png"/></a>
+							<a href="https://www.amazon.cn/ref=nav_logo/461-0801311-6125149"><img class="mar-r" src="../img/yamaxun.png"/></a>
+							<a href="https://www.360.cn/"><img class="mar-r" src="../img/360.png"/></a>
+							<a href="https://www.taobao.com/"><img class="mar-r" src="../img/taobao.png"/></a>
+							<a href="http://www.163.com/"><img class="mar-r" src="../img/wangyi.png"/></a>
+							<a href="http://www.huawei.com/cn/"><img src="../img/huawei.png"/></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="fot-left">
+					<p>联系我们</p>
+					<p>地址：北京市东城区东四北大街168号中文万维</p>
+					<p>电话：86-10-64015069</p>
+					<p>传真：86-10-64015009</p>
+				</div>
+				<div class="fot-right">
+					<p>copyright 中文万维 版权所有</p>
+					<p>京ICP备15043009 -2</p>
+					<p>京公网安备11010102001736号</p>
+				</div>
+			</div>
+			<!------------------------------------------------------------------------------------------------------------>			
+			<div class="login-box"></div>
+			<div class="login-box-frame">
+				<img src="../img/signIn/sigin-close.png" class="login-box-close"/>
+				<h3>登录账号</h3>
+				<div class="login-box-error" style="display: none;">
+					<p>x</p>
+					<span>密码错误</span>
+				</div>
+				<input type="text" placeholder="手机号" class="phone-number"/><br /><br />
+				<input type="password" placeholder="密码" class="pass-number"/>
+				<button class="login-btn">登&ensp;录</button>
+				<div class="login-toRegister">
+					没有账号？&emsp;<span class="immediately-register">立即注册</span>
+				</div>
+			</div>
+			<!--注册-->
+			
+			<div class="reg_bg">
+					<img src="../img/signIn/sigin-close.png" class="login-box-close"/>
+				<div class="register">
+					<div class="reg_content">
+						<h3>账号注册</h3>
+						<div class="reg_step" id="reg1">
+							
+							<div class="login-box-error" style="display: none;">
+					<p>x</p>
+					<span>密码错误</span>
+				</div>
+							<ul class="reg_con">
+								<li>
+									<input type="hidden" id="data_phonenum_flag"  value="0"/>
+									<input id="phonenum" type="text" value="" placeholder="输入手机号"  onblur="checkMobile($(this).val(),this)"/>
+								</li>
+								<li><input id="password" type="password" value="" placeholder="输入6-16位字母数字组合密码" onblur="checkpass(1)"/></li>
+								<li><input id="passwordt" type="password" value="" placeholder="重复输入密码" onblur="checkpass(2)" /></li>
+								<li class="message_code">
+									<input type="text" placeholder="图形验证码"  name="imagecode" id="id_imagecode"/>
+									<img src="http://www.cread.com/login/generateImage"+new Date().getTime()+"" class="login_image" id="login_image"
+										 onclick="$('#login_image').attr('src','http://www.cread.com/login/generateImage?'+new Date().getTime())"
+										 style="cursor: pointer">
+									<!--<a href="javascript:changeImage()" tabindex="-1">换一张</a>-->
+								</li>
+								<li class="message_code"><input id="smsvcode" type="text" value="" placeholder="填写短信验证码" />
+									<input id="verificationCodebtn" type="button" class="send" onclick="sendVerificationCode('register')" value="发送验证码"></li>
+							</ul>
+							<div class="agree"><input id="insure" type="checkbox" checked="true"/><span>我已阅读并同意<a id="protocol"  href="../html/Management-projectile.html">《星宇直播服务条款》</a></span></div>
+							<div class="confirm_sure"><a onclick="registeruser()">确认注册</a></div>
+							<div class="go_login">已有账号？ 马上<a class="show-login">登录</a></div>
+						</div>					
+					</div>
+				</div>
+			</div>
+			<div class="login-success"><img src="../img/signIn/sigin-close.png" class="login-box-close"/>注册成功</div>
+<!------------------------------------------------------------------------------------------------------------>	
+		</div>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/cooperation.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/public.js"></script>
+		<script type="text/javascript" src="../js/usercenter.js"></script>
+		<script type="text/javascript" src="../js/cookies.js"></script>
+	</body>
+</html>
+

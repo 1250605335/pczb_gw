@@ -1,0 +1,249 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.mar-r{
+	margin-right: 16px;
+}
+.wrapper{
+	width: 100%;
+	min-width: 1200px;
+	min-height: 100%;
+	padding-bottom: 120px;
+	box-sizing: border-box;
+	position: relative;
+}
+.wrapper .bg1{
+	z-index: -1;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.wrapper .bg2{
+	z-index: -1;
+	position: absolute;
+	left: 0;
+	bottom: 120px;
+}
+.section{
+	/*background: url("../img/pagebg.png") no-repeat center center;
+	background-size: cover;*/
+}
+.section .content{
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+.content .top{
+	width: 100%;
+	height: 80px;
+}
+.content .top .logo{
+	height: 42px;
+	margin-top: 19px;
+	cursor: pointer;
+}
+.content .top ul{
+	height: 80px;
+	overflow: hidden;
+	float: right;
+	line-height: 80px;
+	font-size: 12px;
+}
+.content .top ul li{
+	padding: 0 12px;
+	height: 100%;
+	display: inline-block;
+	font-size: 14px;
+	cursor: pointer;
+	float: left;
+	border-radius: 0 0 5px 5px;
+	
+	/*-moz-border-radius-bottomleft: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;*/
+}
+.content .top ul li.active{
+	background: #ff9e52;
+}
+.content .top ul li a{
+	color: #b6b6b6;
+	display: inline-block;
+}
+.content .top ul li.active a{
+	color: #ffffff;
+}
+.middle{
+	width: 100%;
+	padding-left: 10px;
+	box-sizing: border-box;
+	margin-top: 80px;
+	height: 630px;
+}
+.middle .cooperation h2{
+	font-size: 16px;
+	color: #666666;
+	margin-bottom: 20px;
+}
+.middle .cooperation div{
+	display: inline-block;
+	font-size: 14px;
+	color: #b6b6b6;
+	line-height: 28px;
+}
+.middle .cooperation .connect-details{
+	width: 44%;
+}
+.content .bottom{
+	margin-top: 60px;
+	width: 100%;
+}
+.content .bottom h2{
+	padding-left: 10px;
+	font-size: 16px;
+	color: #666666;
+	margin-bottom: 50px;
+}
+.content .bottom .patner{
+	width: 100%;
+}
+
+.content .bottom .patner img{
+	width: 166px;
+}
+
+/*尾部样式*/
+.footer{
+	width: 100%;
+	min-width: 1200px;
+	height: 120px;
+	padding-top: 40px;
+	box-sizing: border-box;
+	line-height: 20px;
+	text-align: center;
+	background: #10111a;
+	font-size: 12px;
+	color: #727273;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+}
+/*修改过的中部样式*/
+.middle{
+	width: 100%;
+	margin-top: -30px;
+	position: relative;
+}
+.middle .content>img{
+	width: 318px;
+	height: 625px;
+	margin-left: 204px;
+	margin-top: 30px;
+}
+.contentBox{
+	width: 756px;
+	position: absolute;
+	line-height: 53px;
+	left: 330px;
+	top: 10px;
+	font-size: 14px;
+}
+
+.contentBox h7{
+	font-weight: 600;
+}
+.contentBox img{
+	margin-bottom: 6px;
+	height: 80px;
+}
+.contentBox p{
+	font-size: 13px;
+	color: #666666;
+	line-height: 27px;
+	font-family: Adobe Heiti Std;
+}
+.middle .content h5{
+	width: 526px;
+	font-size: 18px;
+	line-height: 25px;
+	color: #666666;
+	position: absolute;
+	left: 600px;
+	top: 330px;
+}
+.middle .content a{
+	width: 85px;
+	height: 16px;
+	margin-top: 18px;
+}
+.middle .content a img{
+	width: 85px;
+	height: 16px;
+}
+/*轮播部分*/
+.swiperBox{
+	width: 304px;
+	height: 497px;
+	/*background: url(../img/11-15/blackIpone.png) no-repeat center center;*/
+	background-size: cover;
+	box-sizing: border-box;
+	/*padding-top: 43px;
+	padding-left: 2px;*/
+	margin-top: 61px;
+	transform: translateX(-35px);
+}
+.swiper-container{
+	width: 220px;
+	height: 398px;
+	padding-bottom: 99px;
+}
+.swiper-container img{
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-pagination-bullet{
+	background: #FF8B43!important;
+	opacity: 1!important;
+	box-sizing: border-box;
+	border: 1px solid #FF8B43;
+}
+.swiper-pagination-bullet-active{
+	background: #FFFFFF!important;
+}
+.toggleDj img{
+	width: 11px;
+	height: 8px;
+	vertical-align: middle;
+	margin-top: 3px;
+	margin-left: 2px;
+}
+.toggleDj{
+	position: absolute;
+	left: 26px;
+	bottom: 64px;
+	color: #ff9e52!important;
+	cursor: pointer;
+}
+.introduce{
+	display: none;
+	
+}
+.xuNi{
+	display: block;
+	margin-top: -15px;
+}
+.xuNi a{
+	color:#ff9e52;
+	border-bottom: 1px solid #ff9e52;
+}
+.xuNi img{
+	width: 11px!important;
+	height: 8px!important;
+	transform: rotate(-90deg);
+	vertical-align: middle;
+	margin-top: 3px;
+}

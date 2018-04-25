@@ -1,0 +1,200 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.wrapper{
+	width: 100%;
+	height: 100%;
+}
+.section{
+	width: 100%;
+	height: 100%;
+	/* padding-bottom: 120px; */
+	box-sizing: border-box;
+}
+/*左边内容*/
+.section .left{
+	width: 41%;
+	height: 100%;
+	float: left;
+	background: url(../img/left-bg.png) no-repeat center center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+.section .left .leftbg{
+	height: 100%;
+	width: 0%;
+	/* position: absolute; */
+	/* right: 0; */
+}
+.section .left .logo{
+	width: 21.5%;
+	position: absolute;
+	top: 25px;
+	left: 49.3%;
+	cursor: pointer;
+}
+.section .left img{
+	-ms-transition: all .4s linear;
+	-webkit-transition: all .4s linear;
+	transition: all .4s linear;
+}
+.section .left .code{
+	width: 40%;
+	position: absolute;
+	top: 50%;
+	margin-top: -20%;
+	right: -40%;
+}
+.section .left .lazy{
+	-ms-transition-delay: 0.4s;
+	-webkit-transition-delay: 0.4s;
+	transition-delay: 0.4s;
+}
+.section .left .ani1{
+	-ms-transform: translateX(-100%);
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+.section .left .android{
+	width: 32%;
+	position: absolute;
+	top: 19.4%;
+	right: -32%;
+}
+.section .left .ani2{
+	transform: translateX(-95%) rotate(-10deg);
+	-webkit-transform: translateX(-95%) rotate(-10deg);
+	-ms-transform: translateX(-95%) rotate(-10deg);
+}
+/*右边内容*/
+.section .right{
+	width: 59%;
+	height: 100%;
+	float: left;
+	background: url(../img/right-bg.png) no-repeat center center;
+	background-size: cover;
+	position: relative;
+}
+.section .right .leftbg{
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 3px;
+}
+.section .right .nav-bar{
+	width: 700px;
+	/* position: fixed; */
+	/* top: 0; */
+	/* left: 50%; */
+	/* margin-right: 150px; */
+	height: 80px;
+	text-align: center;
+}
+.section .right .nav-bar ul{
+	float: left;
+	height: 80px;
+	line-height: 80px;
+	margin-left: 125px;
+}
+.nav-bar>div{
+	float: right;
+	height: 80px;
+	line-height: 80px;
+}
+.login-userName{
+	height: 80px;
+	line-height: 80px;
+	display: none;
+	color: #FF9E52;
+}
+.nav-bar>div button{
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.nav-bar>div button:nth-of-type(1){
+	border-right: 2px solid lightgray;
+}
+
+
+.section .right .nav-bar li{
+	float: left;
+	cursor: pointer;
+	border-bottom: 1px solid transparent;
+	margin-right: 24px;
+}
+.section .right .nav-bar li a{
+	font-size: 14px;
+	color: #999999;
+	display: inline-block;
+	/* padding: 0 12px; */
+}
+.section .right .nav-bar li.active{
+	
+	border-bottom: 2px solid #ff9e52;
+}
+.section .right .nav-bar li.active a{
+	color: #ff9e52;
+}
+.section .right img.xy-logo{
+	width: 44.5%;
+    position: absolute;
+    left: 16.5%;
+    top: 28%;
+}
+.section .right .down-box{
+	width: 26.7%;
+	position: absolute;
+	left: 16.7%;
+	top: 54%;
+}
+.section .right .down-box img{
+	width: 100%;
+	cursor: pointer;
+}
+.section .right .down-box span{
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	background: url("../img/or.png") no-repeat center center;
+}
+/*尾部样式*/
+.footer{
+	width: 100%;
+	min-width: 1200px;
+	height: 160px;
+	padding-top: 40px;
+	box-sizing: border-box;
+	line-height: 20px;
+	text-align: center;
+	background: #10111a;
+	font-size: 12px;
+	color: #727273;
+	/* position: absolute; */
+	/* bottom: 0; */
+	/* left: 0; */
+}
+.fot-left{
+	float: left;
+	margin-left: 30%;
+}
+.fot-left,.fot-right{
+	text-align: left;
+}
+.fot-right{
+	float: right;
+	margin-right: 30%;
+}
+.footer:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.loading-box{
+	position: absolute;
+	top: 300px;
+	right: 450px;
+}

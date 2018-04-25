@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="直播 美女直播 长腿 性感 知性 免费 户外 AR AI VR 萝莉 御姐 黑丝 萌 绝地求生 王者 狼人杀 喊麦 尬舞 嘻哈" />
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>精彩视频</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" /> -->
+	
+	<link rel="stylesheet" type="text/css" href="../css/public.css" />
+	<link rel="stylesheet" type="text/css" href="../css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	<link rel="stylesheet" type="text/css" href="../css/videoLive.css" />
+	<link rel="stylesheet" type="text/css" href="../css/chat.css" />
+	<link rel="stylesheet" type="text/css" href="../css/wall.css" />
+</head>
+
+<body>
+	<div class="wrapper">
+		<img class="bg1" src="../img/bg1.png" />
+		<img class="bg2" src="../img/bg2.png" />
+		<div class="section">
+			<div class="main">
+				<div class="nav-bar">
+					<a href="../index.html">
+						<img src="../img/2018-3-2/xingyu-logo-orange.png" alt="" />
+					</a>
+					<div>
+						<button class="signIn-reg-btn">注册</button>
+						<button class="signIn-login-btn">登录</button>
+						<button class="signIn-out-btn" style="display: none;">退出</button>
+						<span class="login-userName">用户昵称：
+							<span class="login-phone">阿斯顿发送到发的</span>
+						</span>
+					</div>
+					<ul class="top-nav">
+						<li>
+							<a href="../index.html">首页</a>
+						</li>
+						<li class="active">
+							<a href="./brilliantvideo.html">精彩视频</a>
+						</li>
+						<!--<li><a href="./phoneGame.html">游戏</a></li>-->
+						<li>
+							<a href="./about.html">关于我们</a>
+						</li>
+						<li>
+							<a href="./cooperation.html">商务合作</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="ui_live_interaction">
+			<div class="ui_tabbox">
+
+				<div class="chatBox">
+					<div class="chatBox-info">
+						<div class="chatBox-kuang" style="display:block;">
+							<div class="chatBox-content">
+								<div class="chatBox-content-demo" id="chatBox-content-demo">
+
+									<!-- <div class="clearfloat">
+										<div class="left">
+											<div class="chat-avatars">
+												<img src="../img/newAnchor/anchor-head-2.png" alt="头像" />
+											</div>
+											<div class="chat-message">
+												<div class="ui_author_name">粉丝名字</div>
+												<p class="ui_chat_text">
+													给你看张图给给你看张图给给你看张图给给你看张图给给你看张图给
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="clearfloat">
+										<div class="left">
+											<div class="chat-avatars">
+												<img src="../img/newAnchor/anchor-head-2.png" alt="头像" />
+											</div>
+											<div class="chat-message">
+												<div class="ui_author_name">粉丝名字</div>
+												<p class="ui_chat_text">
+													张图给给你看张图给给你看张图给
+												</p>
+											</div>
+										</div>
+									</div> -->
+
+									<!-- <div class="clearfloat">
+										<div class="author-name">
+											<small class="chat-date">2017-12-02 14:26:58</small>
+										</div>
+										<div class="left">
+											<div class="chat-avatars">
+												<img src="img/icon01.png" alt="头像">
+											</div>
+											<div class="chat-message">
+												送主播
+												<span class="ui_gift_send_img">
+												<img src="http://cdn.ikanshu.cn/wwlive/gift/1802/5ac01e64eb5d4379b258c0aa2617e9f8_144.png" alt=""></span>
+											</div>
+										</div>
+									</div> -->
+
+									<!-- <div class="clearfloat">
+										<div class="right">
+											<div class="chat-message">嗯，适合做壁纸</div>
+											<div class="chat-avatars">
+												<img src="../img/newAnchor/anchor-head-1.png" alt="头像" />
+											</div>
+										</div>
+									</div> -->
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui_tab_content">
+					<!-- 聊天框 -->
+					<div class="ui_tab_pane fun_tab_pane" id="chat" style="display:none">
+						<div class="chatBox-send">
+							<textarea class="div-textarea fun_chat_textarea" contenteditable="true" placeholder="想说点什么..." maxlength="50"></textarea>
+							<div class="ui_layout_right">
+								<button id="chat-fasong" class="btn-default-styles cbtn" data-toggle="chatSend">
+									<i class="iconfont icon-fasong"></i>发送
+								</button>
+							</div>
+						</div>
+					</div>
+					<!-- 弹幕输入框 -->
+					<div class="ui_tab_pane fun_tab_pane" id="barrage" style="display:none">
+						<div class="chatBox-send">
+							<textarea class="div-textarea fun_danmu_textarea" contenteditable="true" placeholder="想说点什么..." maxlength="50"></textarea>
+							<div class="ui_layout_right">
+								<button class="btn-default-styles cbtn" data-toggle="danMuSend">
+									<i class="iconfont icon-fasong"></i>发送
+								</button>
+							</div>
+						</div>
+					</div>
+					<!-- 送礼 -->
+					<div class="ui_tab_pane ui_gift_box fun_tab_pane" id="gift" style="display:none">
+
+						<ul class="ui_gift_list fun_gift_list">
+							<!-- <li class="cbtn" data-toggle="chooseGift">
+								<img src="http://imgstest.ikanshu.cn/images-wwlive/gift/1704/1785fe69fe9a41c49d1ae3f3c53299e8_144.png" alt="">
+								<p>拥抱</p>
+								<p class="fun_gift_price">1</p>
+							</li> -->
+
+						</ul>
+						<div class="ui_gift_send">
+							<div class="ui_lay_left">
+								<span class="ui_balance_text">余额:</span>
+								<span class="ui_balance_number fun_balance_number">18$</span>
+								<i class="ui_zuan_small"></i>
+							</div>
+							<div class="ui_lay_middle">
+								<span class="ui_gift_price_show fun_gift_price_show">8$</span>
+								<i class="ui_zuan_small"></i>
+
+							</div>
+							<button class="btn-default-styles ui_lay_right cbtn" data-toggle="sendGifts">发送</button>
+						</div>
+					</div>
+					<!-- 充值 -->
+					<div class="ui_tab_pane fun_tab_pane" id="recharge" style="display:none">
+						4
+					</div>
+				</div>
+				<ul class="ui_tabs clearfix">
+					<li>
+						<a href="javascript:void(0)" class="cbtn ui_chat_tab_btn" data-toggle="chatBox-send">
+							<img src="../img/liaotian_2x.png" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="cbtn ui_danmu_tab_btn" data-toggle="danmu">
+							<img src="../img/danmu_2x.png" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="cbtn ui_gifts_tab_btn" data-toggle="gifts">
+							<img src="../img/songli_2x.png" alt="">
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="ui_tab_btn fun_recharge_btn cbtn" data-toggle="rechargeBtn">
+							<img src="../img/chongzhi_2x.png" alt="">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="footer">
+			<div class="fot-left">
+				<p>联系我们</p>
+				<p>地址：北京市东城区东四北大街168号中文万维</p>
+				<p>电话：86-10-64015069</p>
+				<p>传真：86-10-64015009</p>
+			</div>
+			<div class="fot-right">
+				<p>copyright 中文万维 版权所有</p>
+				<p>京ICP备15043009 -2</p>
+				<p>京公网安备11010102001736号</p>
+			</div>
+		</div>
+
+		<!------------------------------------------------------------------------------------------------------------>
+		<div class="login-box"></div>
+		<div class="login-box-frame">
+			<img src="../img/signIn/sigin-close.png" class="login-box-close" />
+			<h3>登录账号</h3>
+			<div class="login-box-error" style="display: none;">
+				<p>x</p>
+				<span>密码错误</span>
+			</div>
+			<input type="text" placeholder="手机号" class="phone-number" />
+			<br />
+			<br />
+			<input type="password" placeholder="密码" class="pass-number" />
+			<button class="login-btn">登&ensp;录</button>
+			<div class="login-toRegister">
+				没有账号？&emsp;
+				<span class="immediately-register">立即注册</span>
+			</div>
+		</div>
+		<!--注册-->
+
+		<div class="reg_bg">
+			<img src="../img/signIn/sigin-close.png" class="login-box-close" />
+			<div class="register">
+				<div class="reg_content">
+					<h3>账号注册</h3>
+					<div class="reg_step" id="reg1">
+
+						<div class="login-box-error" style="display: none;">
+							<p>x</p>
+							<span>密码错误</span>
+						</div>
+						<ul class="reg_con">
+							<li>
+								<input type="hidden" id="data_phonenum_flag" value="0" />
+								<input id="phonenum" type="text" value="" placeholder="输入手机号" onblur="checkMobile($(this).val(),this)" />
+							</li>
+							<li>
+								<input id="password" type="password" value="" placeholder="输入6-16位字母数字组合密码" onblur="checkpass(1)" />
+							</li>
+							<li>
+								<input id="passwordt" type="password" value="" placeholder="重复输入密码" onblur="checkpass(2)" />
+							</li>
+							<li class="message_code">
+								<input type="text" placeholder="图形验证码" name="imagecode" id="id_imagecode" />
+								<img src="http://www.cread.com/login/generateImage" +new Date().getTime()+ "" class="login_image" id="login_image" onclick="$('#login_image').attr('src','http://www.cread.com/login/generateImage?'+new Date().getTime())"
+								    style="cursor: pointer">
+								<!--<a href="javascript:changeImage()" tabindex="-1">换一张</a>-->
+							</li>
+							<li class="message_code">
+								<input id="smsvcode" type="text" value="" placeholder="填写短信验证码" />
+								<input id="verificationCodebtn" type="button" class="send" onclick="sendVerificationCode('register')" value="发送验证码">
+							</li>
+						</ul>
+						<div class="agree">
+							<input id="insure" type="checkbox" checked="true" />
+							<span>我已阅读并同意
+								<a id="protocol" href="../html/Management-projectile.html">《星宇直播服务条款》</a>
+							</span>
+						</div>
+						<div class="confirm_sure">
+							<a onclick="registeruser()">确认注册</a>
+						</div>
+						<div class="go_login">已有账号？ 马上
+							<a class="show-login">登录</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="login-success">
+			<img src="../img/signIn/sigin-close.png" class="login-box-close" />注册成功</div>
+		<!------------------------------------------------------------------------------------------------------------>
+
+	</div>
+	<!--<div class="videoplayer">
+			<div class="player-box">
+				<div class="player-bg">
+					<div id="a1"></div>
+				</div>
+				<dl>
+					<dt><img src="../img/code.png"/></dt>
+					<dd>观看更多精彩视频<br />扫描二维码，下载星宇直播</dd>
+				</dl>
+				<img class="cancel" src="../img/cancel.png"/>
+			</div>
+		</div>-->
+	<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../ckplayer/ckplayer.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/brilliantvideo.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/public.js"></script>
+	<script type="text/javascript" src="../js/usercenter.js"></script>
+	<script type="text/javascript" src="../js/cookies.js"></script>
+	<script src="../js/barrageWall.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/videoLive.js" type="text/javascript" charset="utf-8"></script>
+
+
+</body>
+
+</html>
